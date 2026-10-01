@@ -1,0 +1,24 @@
+name: Check catalog
+
+# Every push and pull request: validate catalog.json with the App Store's own
+# checker, so a broken entry is caught here instead of being skipped in the store.
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: CultureReset/saas-cybercheck
+          path: .store
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node .store/dist/check-catalog.js catalog.json
