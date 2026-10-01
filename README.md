@@ -15,9 +15,7 @@ Each entry is a **Modular app manifest**, the same format as
 settings and permissions an app has. Apps are descriptions, never code, so one
 app cannot break another or reach outside its own data.
 
-The first ten apps are Modular's built-in apps (Listings, Action Buttons,
-Social Links, Enquiry Form, Gallery, Video, FAQ, Link Hub, QR Menu, Song
-Requests), copied from `App-build-/src/modules/*/manifest.ts`.
+The catalog starts empty. Nothing is listed until you add it.
 
 ## Publish a new app
 
